@@ -63,11 +63,9 @@ En cambio, en **core, api y frontend** implementé únicamente los endpoints y l
   - `ubicaciones`  
   - `estado`
 
-- **No implementadas:**  
-  - `configuracion`  
-  - `sql_sequence`  
 
 ---
+
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -198,7 +196,7 @@ Durante el desarrollo de este proyecto, se utilizó **ChatGPT** para:
 
 - Consultas sobre la estructura del código.  
 - Reestructuración y optimización de lógicas de negocio.  
-- Edición y sugerencias de código en Python y SQL.  
+- Edición rapida y sugerencias de código en Python y SQL.  
 
 Gracias a estas consultas, se pudieron resolver de manera más rápida problemas complejos y mejorar la claridad del proyecto. 
 
@@ -209,7 +207,6 @@ Gracias a estas consultas, se pudieron resolver de manera más rápida problemas
 
 🆔 ID de préstamos: Tras varias pruebas, el ID de la tabla prestamos se desincronizó y actualmente arranca desde 65.
 
-⚠ Tablas no implementadas: configuracion y sql_sequence no fueron necesarias para la funcionalidad entregada y por eso no se implementaron.
 
 💾 Backup de la base de datos: No se eliminó un archivo de backup (library.db) que quedó en la carpeta del proyecto; conviene eliminarlo antes de un commit final.
 
