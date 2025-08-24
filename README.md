@@ -119,10 +119,9 @@ Documentación API (Swagger UI): http://127.0.0.1:8000/docs
 Documentación API (ReDoc): http://127.0.0.1:8000/redoc
 
 ---
-
+```plaintext
 📂 Estructura del Proyecto
 
-```plaintext
 📂 Proyecto
 ├── app/
 │   ├── api/        # Endpoints backend (autores, libros, usuarios, préstamos, Wikipedia)
