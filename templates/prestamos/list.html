@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h1 class="mb-4">Listado de Préstamos</h1>
+
+<a href="/prestamos/create" class="btn btn-primary mb-3">Nuevo Préstamo</a>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Libro</th>
+            <th>Fecha Préstamo</th>
+            <th>Devolución Esperada</th>
+            <th>Fecha Devolución Real</th>
+            <th>Estado</th>
+            <th>Multa</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for prestamo_info in prestamos %}
+        <tr>
+            <td>{{ prestamo_info.prestamo.prestamo_id }}</td>
+            <td>{{ prestamo_info.prestamo.usuario.nombre }} {{ prestamo_info.prestamo.usuario.apellido }}</td>
+            <td>{{ prestamo_info.prestamo.libro.titulo }}</td>
+            <td>{{ prestamo_info.prestamo.fecha_prestamo.strftime('%Y-%m-%d') }}</td>
+            <td>{{ prestamo_info.prestamo.fecha_devolucion_esperada.strftime('%Y-%m-%d') }}</td>
+            <td>
+                {% if prestamo_info.prestamo.fecha_devolucion_real and prestamo_info.prestamo.estado != "perdido" %}
+                    {{ prestamo_info.prestamo.fecha_devolucion_real.strftime('%Y-%m-%d') }}
+                {% else %}
+                    <span class="text-muted">-</span>
+                {% endif %}
+            </td>
+
+            <td>{{ prestamo_info.prestamo.estado }}</td>
+            <td>
+                {% if prestamo_info.prestamo.multa %}
+                    ${{ prestamo_info.prestamo.multa }}
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+            <td>
+                {% if prestamo_info.prestamo.estado == "activo" %}
+                    <!-- botones solo si está activo -->
+                    <form action="/prestamos/{{ prestamo_info.prestamo.prestamo_id }}/finalizar" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-success">Finalizar</button>
+                    </form>
+                    <form action="/prestamos/{{ prestamo_info.prestamo.prestamo_id }}/perdido" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger">Perdido</button>
+                    </form>
+                    <form action="/prestamos/{{ prestamo_info.prestamo.prestamo_id }}/eliminar" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-warning">Eliminar</button>
+                    </form>
+                {% elif prestamo_info.prestamo.estado in ["completado", "perdido", "atrasado"] %}
+                    <!-- solo eliminar -->
+                    <form action="/prestamos/{{ prestamo_info.prestamo.prestamo_id }}/eliminar" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-warning">Eliminar</button>
+                    </form>
+                {% else %}
+                    <span class="text-muted">Sin acciones</span>
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Crear Préstamo{% endblock %}
+
+{% block content %}
+<br>
+<h1 class="mb-4">Crear Nuevo Préstamo</h1>
+
+<form action="/prestamos/create" method="post">
+    <div class="mb-3">
+        <label for="usuario_id" class="form-label">Usuario:</label>
+        <select name="usuario_id" id="usuario_id" class="form-select" required>
+            <option value="">-- Seleccione un usuario --</option>
+            {% for usuario in usuarios %}
+                <option value="{{ usuario.usuario_id }}">{{ usuario.nombre }} {{ usuario.apellido }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="libro_id" class="form-label">Libro:</label>
+        <select name="libro_id" id="libro_id" class="form-select" required>
+            <option value="">-- Seleccione un libro --</option>
+            {% for libro in libros %}
+                <option value="{{ libro.libro_id }}">
+                    {{ libro.titulo }} ({{ libro.ejemplares_disponibles }} disponibles)
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="fecha_prestamo" class="form-label">Fecha Préstamo:</label>
+        <input type="date" name="fecha_prestamo" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="fecha_devolucion" class="form-label">Fecha Devolución:</label>
+        <input type="date" name="fecha_devolucion" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+<a href="/prestamos" class="btn btn-link mt-3">Volver al listado</a>
+{% endblock %}

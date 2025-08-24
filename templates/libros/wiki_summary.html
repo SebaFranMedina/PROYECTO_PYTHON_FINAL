@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<div class="container mt-4">
+    <h2 class="mb-3">Resumen de Wikipedia: {{ libro.titulo }}</h2>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% elif data %}
+        <h3>{{ data.title }}</h3>
+        <p>{{ data.extract }}</p>
+        {% if data.content_urls and data.content_urls.desktop and data.content_urls.desktop.page %}
+            <a href="{{ data.content_urls.desktop.page }}" target="_blank" class="btn btn-primary mt-3">
+                Leer más en Wikipedia
+            </a>
+        {% endif %}
+    {% else %}
+        <div class="alert alert-info">No se encontró información disponible en Wikipedia.</div>
+    {% endif %}
+
+    <div class="mt-3">
+        <a href="/libros/{{ libro.libro_id }}" class="btn btn-secondary">Volver al libro</a>
+    </div>
+</div>
+{% endblock %}
