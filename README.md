@@ -108,6 +108,7 @@ uvicorn main:app --reload
 
 📂 Estructura del Proyecto
 
+```plaintext
 app/
 ├── api/           # Endpoints backend (autores, libros, usuarios, préstamos, Wikipedia)
 ├── core/          # Lógica de negocio (autores, libros, usuarios, préstamos)
@@ -116,12 +117,13 @@ app/
 ├── schemas/       # Validación con Pydantic (todas las tablas creadas)
 ├── templates/     # Vistas HTML
 ├── static/        # Archivos estáticos (CSS/JS)
-├── .gitignore                # Archivos ignorados por Git
-├── example.env               # Plantilla variables entorno
-├── LICENSE                   # Licencia del proyecto
-├── main.py                   # Punto entrada aplicación
-├── README.md                 # Documentación principal
-└── requirements.txt          # Dependencias Python
+├── .gitignore     # Archivos ignorados por Git
+├── example.env    # Plantilla variables entorno
+├── LICENSE        # Licencia del proyecto
+├── main.py        # Punto entrada aplicación
+├── README.md      # Documentación principal
+└── requirements.txt # Dependencias Python
+
 
 
 ## 🔄 Flujo del Código (Diagrama Visual)
