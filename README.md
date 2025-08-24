@@ -202,13 +202,14 @@ Durante el desarrollo de este proyecto, se utilizó **ChatGPT** para:
 
 Gracias a estas consultas, se pudieron resolver de manera más rápida problemas complejos y mejorar la claridad del proyecto. 
 
-TO DO / Notas
+📝 TO DO / Notas
 
-No se completó la documentación del proyecto.
+📄 Documentación: La documentación completa del proyecto no fue finalizada, aunque la API cuenta con documentación automática en Swagger disponible en http://127.0.0.1:8000/docs
+.
 
-En la pestaña de préstamos, tras varias pruebas el ID de préstamos se corría y actualmente arranca en 65.
+🆔 ID de préstamos: Tras varias pruebas, el ID de la tabla prestamos se desincronizó y actualmente arranca desde 65.
 
-Tablas configuracion y sql_sequence no fueron implementadas porque no eran necesarias para la funcionalidad entregada.
+⚠ Tablas no implementadas: configuracion y sql_sequence no fueron necesarias para la funcionalidad entregada y por eso no se implementaron.
 
-No se pudo borrar un backup de la base de datos copiada en la carpeta del proyecto
+💾 Backup de la base de datos: No se eliminó un archivo de backup (library.db) que quedó en la carpeta del proyecto; conviene eliminarlo antes de un commit final.
 
