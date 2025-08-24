@@ -122,7 +122,7 @@ app/
 ├── main.py                   # Punto entrada aplicación
 ├── README.md                 # Documentación principal
 └── requirements.txt          # Dependencias Python
-└── library.db                # Backup DB olvidado
+
 
 ## 🔄 Flujo del Código (Diagrama Visual)
 
