@@ -83,46 +83,62 @@ En cambio, en **core, api y frontend** implementé únicamente los endpoints y l
 
 ## ⚙️ Instalación y Ejecución
 
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/usuario/diplomatura-python-bases
-   cd diplomatura-python-bases
-Crear y activar un entorno virtual:
+Sigue estos pasos para levantar la aplicación localmente:
 
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/usuario/diplomatura-python-bases.git
+cd diplomatura-python-bases
 
+2. Crear y activar un entorno virtual
+
+Linux / Mac:
+python3 -m venv venv
+source venv/bin/activate
+
+Windows:
 python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
-Instalar dependencias:
+venv\Scripts\activate
 
-
+3. Instalar dependencias
 pip install -r requirements.txt
-Configurar variables de entorno:
 
-Copiar example.env a .env y ajustar según sea necesario.
+4. Configurar variables de entorno
 
-Ejecutar la aplicación:
+Copiar example.env a .env:
+cp example.env .env    # Linux/Mac
+copy example.env .env  # Windows
+Editar .env según sea necesario (por ejemplo, configuración de base de datos).
+
+5. Ejecutar la aplicación
 uvicorn main:app --reload
 
-👉 La aplicación estará disponible en: http://127.0.0.1:8000
+6. Acceder a la aplicación
+Frontend web: http://127.0.0.1:8000
+Documentación API (Swagger UI): http://127.0.0.1:8000/docs
+Documentación API (ReDoc): http://127.0.0.1:8000/redoc
+
+---
 
 📂 Estructura del Proyecto
 
 ```plaintext
-app/
-├── api/           # Endpoints backend (autores, libros, usuarios, préstamos, Wikipedia)
-├── core/          # Lógica de negocio (autores, libros, usuarios, préstamos)
-├── frontend/      # Endpoints frontend (HTML + Jinja2) para autores, libros, usuarios, préstamos
-├── models/        # Modelos SQLAlchemy (todas las tablas creadas)
-├── schemas/       # Validación con Pydantic (todas las tablas creadas)
-├── templates/     # Vistas HTML
-├── static/        # Archivos estáticos (CSS/JS)
-├── .gitignore     # Archivos ignorados por Git
-├── example.env    # Plantilla variables entorno
-├── LICENSE        # Licencia del proyecto
-├── main.py        # Punto entrada aplicación
-├── README.md      # Documentación principal
+📂 Proyecto
+├── app/
+│   ├── api/        # Endpoints backend (autores, libros, usuarios, préstamos, Wikipedia)
+│   ├── core/       # Lógica de negocio (autores, libros, usuarios, préstamos)
+│   ├── frontend/   # Endpoints frontend (HTML + Jinja2) para autores, libros, usuarios, préstamos
+│   ├── models/     # Modelos SQLAlchemy (todas las tablas creadas)
+│   ├── schemas/    # Validación con Pydantic (todas las tablas creadas)
+│   ├── templates/  # Vistas HTML
+│   └── static/     # Archivos estáticos (CSS/JS)
+├── .gitignore       # Archivos ignorados por Git
+├── example.env      # Plantilla variables entorno
+├── LICENSE          # Licencia del proyecto
+├── main.py          # Punto de entrada aplicación
+├── README.md        # Documentación principal
 └── requirements.txt # Dependencias Python
+
 
 
 
