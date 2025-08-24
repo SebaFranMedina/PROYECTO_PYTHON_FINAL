@@ -122,7 +122,7 @@ Documentación API (ReDoc): http://127.0.0.1:8000/redoc
 
 📂 Estructura del Proyecto
 
-
+```plaintext
 📂 Proyecto
 ├── app/
 │   ├── api/        # Endpoints backend (autores, libros, usuarios, préstamos, Wikipedia)
@@ -192,7 +192,7 @@ Documentación API (ReDoc): http://127.0.0.1:8000/redoc
             │ URLs de autores o  │
             │ resúmenes de libros│
             └────────────────────┘
-
+```
 ## 💡 Nota del Desarrollo
 
 Durante el desarrollo de este proyecto, se utilizó **ChatGPT** para:
