@@ -1,7 +1,7 @@
 # 📚 Proyecto Final - Gestión de Biblioteca
 
 ## 👨‍💻 Autor
-**Sebastián Medina** – Diplomatura en Python (Bases de Datos y FastAPI)
+**Sebastián Medina** – Diplomatura en Python
 
 ---
 
