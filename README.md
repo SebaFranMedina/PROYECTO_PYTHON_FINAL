@@ -145,7 +145,7 @@ Documentación API (ReDoc): http://127.0.0.1:8000/redoc
 
 ## 🔄 Flujo del Código (Diagrama Visual)
 
-```plaintext
+
             ┌────────────────────┐
             │    Frontend (HTML) │
             │  app/frontend/*.py │
