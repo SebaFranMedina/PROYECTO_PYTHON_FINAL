@@ -86,7 +86,7 @@ En cambio, en **core, api y frontend** implementé únicamente los endpoints y l
 Sigue estos pasos para levantar la aplicación localmente:
 
 ### 1. Clonar el repositorio
-```bash
+
 git clone https://github.com/usuario/diplomatura-python-bases.git
 cd diplomatura-python-bases
 
@@ -129,16 +129,17 @@ Documentación API (ReDoc): http://127.0.0.1:8000/redoc
 │   ├── core/       # Lógica de negocio (autores, libros, usuarios, préstamos)
 │   ├── frontend/   # Endpoints frontend (HTML + Jinja2) para autores, libros, usuarios, préstamos
 │   ├── models/     # Modelos SQLAlchemy (todas las tablas creadas)
-│   ├── schemas/    # Validación con Pydantic (todas las tablas creadas)
-│   ├── templates/  # Vistas HTML
-│   └── static/     # Archivos estáticos (CSS/JS)
-├── .gitignore       # Archivos ignorados por Git
-├── example.env      # Plantilla variables entorno
-├── LICENSE          # Licencia del proyecto
-├── main.py          # Punto de entrada aplicación
-├── README.md        # Documentación principal
+│   └── schemas/    # Validación con Pydantic (todas las tablas creadas)
+├── templates/      # Templates generales (base.html, navbar.html, etc.)
+├── static/         # Archivos estáticos generales
+├── instance/       # Instancia de la base de datos
+├── docs/           # Documentación adicional o imágenes (por ejemplo DER)
+├── .gitignore      # Archivos ignorados por Git
+├── example.env     # Plantilla variables entorno
+├── LICENSE         # Licencia del proyecto
+├── main.py         # Punto de entrada aplicación
+├── README.md       # Documentación principal
 └── requirements.txt # Dependencias Python
-
 
 
 
@@ -191,6 +192,7 @@ Documentación API (ReDoc): http://127.0.0.1:8000/redoc
             │ URLs de autores o  │
             │ resúmenes de libros│
             └────────────────────┘
+
 ## 💡 Nota del Desarrollo
 
 Durante el desarrollo de este proyecto, se utilizó **ChatGPT** para:
