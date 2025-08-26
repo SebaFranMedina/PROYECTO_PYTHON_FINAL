@@ -30,7 +30,7 @@ En cambio, en **core, api y frontend** implementé únicamente los endpoints y l
 - ✅ **CRUD Préstamos**
 
 ### 🔒 Reglas de negocio aplicadas
-- ❌ No se pueden borrar **usuarios** con historial de préstamos.  
+- ❌ No se pueden borrar **usuarios** con prestamos o historial de préstamos.  
 - ❌ No se pueden borrar **libros** con préstamos asociados o historial de prestamos.  
 - ❌ No se pueden borrar **autores** que tengan libros registrados, prestamos activos o historial de prestamos.  
 - 🚫 No se permite prestar libros a **usuarios suspendidos o inactivos**.  
