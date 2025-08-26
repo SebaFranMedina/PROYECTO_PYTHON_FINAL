@@ -177,11 +177,9 @@ async def eliminar_prestamo(prestamo_id: int, db: Session = Depends(get_db)):
     if not prestamo:
         return RedirectResponse("/prestamos", status_code=303)
 
-    if prestamo.estado in ["activo", "atrasado"]:
-        db.query(Libro).filter(Libro.libro_id == prestamo.libro_id).update({
-            "ejemplares_disponibles": Libro.ejemplares_disponibles + 1
-        })
-
+    # ❌ No tocar el stock del libro
     db.delete(prestamo)
     db.commit()
+
     return RedirectResponse("/prestamos", status_code=303)
+    
