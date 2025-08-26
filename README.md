@@ -31,8 +31,8 @@ En cambio, en **core, api y frontend** implementé únicamente los endpoints y l
 
 ### 🔒 Reglas de negocio aplicadas
 - ❌ No se pueden borrar **usuarios** con historial de préstamos.  
-- ❌ No se pueden borrar **libros** con préstamos asociados.  
-- ❌ No se pueden borrar **autores** que tengan libros registrados.  
+- ❌ No se pueden borrar **libros** con préstamos asociados o historial de prestamos.  
+- ❌ No se pueden borrar **autores** que tengan libros registrados, prestamos activos o historial de prestamos.  
 - 🚫 No se permite prestar libros a **usuarios suspendidos o inactivos**.  
 - ⏰ Se aplican **multas** si los usuarios entregan tarde o pierden un libro:
   - Al entregar tarde, se cobra una multa proporcional y el stock se **incrementa**.  
